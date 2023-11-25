@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace TemelKonular.Controllers;
 
 public class CourseController : Controller{
-public string Index()
+public IActionResult Index()
 {
-    return "Course/index";
+    return View();
 }
-public string List()
+public IActionResult List()
 {
-    return "Course/List";
+    return View("CourseList");
 }
 
 }
