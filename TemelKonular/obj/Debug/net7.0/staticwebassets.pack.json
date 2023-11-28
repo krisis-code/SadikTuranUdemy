@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\TemelKonular\\wwwroot\\img\\1.jpg",
+      "PackagePath": "staticwebassets\\img\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\TemelKonular\\wwwroot\\img\\2.jpg",
+      "PackagePath": "staticwebassets\\img\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\TemelKonular\\wwwroot\\img\\3.jpg",
+      "PackagePath": "staticwebassets\\img\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\TemelKonular\\wwwroot\\img\\4.jpg",
+      "PackagePath": "staticwebassets\\img\\4.jpg"
+    },
+    {
       "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\TemelKonular\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
