@@ -10,8 +10,9 @@ public IActionResult Index()
 {
     var kurs = new Course();
     kurs.Id = 1;
-    kurs.Title="Aspnet core kursu";
-    kurs.Description = "Güzel bir eğitim";
+    kurs.Title="Komple Uygulamalı Web Geliştirme Eğitimi";
+    kurs.Description = "Sıfırdan ileri seviyeye 'Web Geliştirme': Html, Css, Sass, Flexbox, Bootstrap, Javascript, Angular, JQuery, Asp.Net Mvc&Core Mvc";
+    kurs.image="1.jpg";
     
     return View(kurs);
 }
