@@ -1,48 +1,17 @@
 @model Course
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
-    <title>List</title>
-</head>
-<body>
-    <header>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <div class="contanier">
-          
-          <ul class="navbar-nav me-auto">
-            <a class="navbar-brand" href="#"  >CourseApp</a>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Course</a>
-            </li>
-          </ul>
-        </div>
-      </nav> 
-    </header>
-    <div class="container pb-3">
-      <main>
-        <h1>List Page</h1>
-       
-        <div class="card mb-3"></div>
-      <div class="row">
-       <div class="col-md-4">
-          <img class="img-fluid rounded-start" src="~/img/@Model.image" alt="" >
-        </div>
-          <div class="col-md-8">
-            <div class="card-body">
-            <h5 class="card-title">@Model.Title</h5>
-            <p class="card-text">@Model.Description</p>
-          </div>
-          </div>
-          </div>
-      </main>
-    </div>
    
-</body>
-</html>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid rounded-start" src="~/img/@Model.image" alt="" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Description</p>
+            </div>
+        </div>
+    </div>
+</div>
+
