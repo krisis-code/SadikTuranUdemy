@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SadikTuranUdemy\\basics\\basics.csproj": {}
+    "C:\\SadikTuranUdemy\\Meeting app\\MeetingApp\\MeetingApp.csproj": {}
   },
   "projects": {
-    "C:\\SadikTuranUdemy\\basics\\basics.csproj": {
+    "C:\\SadikTuranUdemy\\Meeting app\\MeetingApp\\MeetingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SadikTuranUdemy\\basics\\basics.csproj",
-        "projectName": "basics",
-        "projectPath": "C:\\SadikTuranUdemy\\basics\\basics.csproj",
+        "projectUniqueName": "C:\\SadikTuranUdemy\\Meeting app\\MeetingApp\\MeetingApp.csproj",
+        "projectName": "MeetingApp",
+        "projectPath": "C:\\SadikTuranUdemy\\Meeting app\\MeetingApp\\MeetingApp.csproj",
         "packagesPath": "C:\\Users\\muhammed.baspınar\\.nuget\\packages\\",
-        "outputPath": "C:\\SadikTuranUdemy\\basics\\obj\\",
+        "outputPath": "C:\\SadikTuranUdemy\\Meeting app\\MeetingApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
