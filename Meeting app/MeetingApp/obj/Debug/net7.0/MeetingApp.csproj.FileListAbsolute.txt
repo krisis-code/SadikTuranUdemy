@@ -52,3 +52,5 @@ C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\MeetingApp.pdb
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\MeetingApp.genruntimeconfig.cache
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\ref\MeetingApp.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\Meeting app\MeetingApp\bin\Debug\net7.0\libman.json
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\Meeting app\MeetingApp\bin\Debug\net7.0\MeetingApp.staticwebassets.runtime.json
