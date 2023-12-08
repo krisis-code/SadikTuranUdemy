@@ -23,3 +23,5 @@ C:\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\refint\MeetingApp.dll
 C:\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\MeetingApp.pdb
 C:\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\MeetingApp.genruntimeconfig.cache
 C:\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\ref\MeetingApp.dll
+C:\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\MeetingApp.RazorAssemblyInfo.cache
+C:\SadikTuranUdemy\Meeting app\MeetingApp\obj\Debug\net7.0\MeetingApp.RazorAssemblyInfo.cs
