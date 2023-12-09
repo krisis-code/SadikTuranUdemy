@@ -4,7 +4,8 @@
 
 }
 <h1 class="h4 text-center">Toplantı Katılım Formu</h1>
-<form method="post" action="">
+<form method="post" action="/Meeting/Apply" novalidate>
+    <div asp-validation-summary="All">
     <div class="mb-3">
         <label asp-for="Name" class="form-label">Ad Soyad</label>
         <input  asp-for="Name" class="form-control">
@@ -24,6 +25,7 @@
              <option value="False">Hayır Gelmiyorum</option>   
         </select>
     </div>
+</div>
 <button class="btn btn-primary" type="submit">Kaydet</button>
 
 </form>
