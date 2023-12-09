@@ -1,6 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
-
+using MeetingApp.Models;
 
 namespace MeetingApp.Controllers
 {
@@ -8,21 +8,18 @@ namespace MeetingApp.Controllers
     public class MeetingController : Controller
     {
       
-        public IActionResult Index()
-        {
-            return View();
-        }
+      
 
          public IActionResult Apply()
         {
             return View();
         }
         [HttpPost]
-         public IActionResult Apply(string Name , string Phone , string Email , bool WillAttend )
+         public IActionResult Apply(UserInfo model)
         {
-           
-            
-            return View();
+           Repository.CreateUser(model);
+            ViewBag.UserCount = Repository.Users.Where(i=>i.WillAttend == true).Count();
+            return View("Thanks" , model);
 
         }
 

@@ -8,14 +8,14 @@ namespace MeetingApp.controllers
         {
             int saat = DateTime.Now.Hour;
 
-           ViewData["UserName"] = "Enes";
+          // ViewData["UserName"] = "Enes";
             ViewData["selamlama"] = saat > 12 ? "İyi Günler ":" Günaydın" ;
             var meetinginfo = new MeetingInfo()
             {
                 Id = 1,
                 Location ="İstanbul ,Abc kongre Merkezi",
                 Date = new DateTime(2024,01,20,20,0,0),
-                NumberOfPeople = 100
+                NumberOfPeople =  Repository.Users.Where(i=>i.WillAttend == true).Count()
             };
             return View(meetinginfo);
         }
