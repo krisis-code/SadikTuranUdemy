@@ -8,10 +8,10 @@ namespace MeetingApp.Models
 
         static Repository()
         {
-            _users.Add(new UserInfo() {id = 1, Name="Ali",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
-             _users.Add(new UserInfo() {id = 2,Name="Enes",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
-              _users.Add(new UserInfo() {id = 3,Name="Ahmet",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
-               _users.Add(new UserInfo() {id = 4,Name="Niyazi",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
+            _users.Add(new UserInfo() {Id = 1, Name="Ali",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
+             _users.Add(new UserInfo() {Id = 2,Name="Enes",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
+              _users.Add(new UserInfo() {Id = 3,Name="Ahmet",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
+               _users.Add(new UserInfo() {Id = 4,Name="Niyazi",Email="Abc@hotmail.com",Phone="111111",WillAttend=true});
         }
         public static List<UserInfo> Users 
         {
@@ -22,8 +22,12 @@ namespace MeetingApp.Models
 
          public static void CreateUser(UserInfo user) 
         {
+            user.Id = Users.Count + 1;
            _users.Add(user);
         }
-
+        public static UserInfo GetById(int id)
+        {
+            return _users.FirstOrDefault(user => user.Id == id);
+        }
     }
 }
