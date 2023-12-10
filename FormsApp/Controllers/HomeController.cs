@@ -10,9 +10,17 @@ public class HomeController : Controller
 
    
 
-    public IActionResult Index()
+    public IActionResult Index(string searchString)
     {
-        return View(Repository.Products);
+        var product = Repository.Products;
+        
+        if(! string.IsNullOrEmpty(searchString))
+        {
+            ViewBag.SearchString = searchString;
+            product = product.Where(p=> p.Name.ToLower().Contains(searchString)).ToList();
+
+        }
+        return View(product);
     }
 
     public IActionResult Privacy()
