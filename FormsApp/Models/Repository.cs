@@ -7,8 +7,8 @@ public class Repository
 
     static Repository()
     {
-        _categories.Add(new Category{CategoryId = 1 , Name = "iphone"});
-        _categories.Add(new Category{CategoryId = 2 , Name = "mac"});
+        _categories.Add(new Category{CategoryId = 1 , Name = "Telefon"});
+        _categories.Add(new Category{CategoryId = 2 , Name = "Bilgisayar"});
 
          _products.Add(new Product{ProductId = 1 , Name = "iPhone 13  satın alın",Price= 40000, IsActive = true ,Image = "1.jpg" , CategoryId =1});
 

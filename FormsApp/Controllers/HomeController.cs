@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FormsApp.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FormsApp.Controllers;
 
@@ -10,7 +11,7 @@ public class HomeController : Controller
 
    
 
-    public IActionResult Index(string searchString)
+    public IActionResult Index(string searchString , string Categories)
     {
         var product = Repository.Products;
         
@@ -20,6 +21,14 @@ public class HomeController : Controller
             product = product.Where(p=> p.Name.ToLower().Contains(searchString)).ToList();
 
         }
+         
+        if(! string.IsNullOrEmpty(Categories) && Categories != "0")
+        {
+           
+            product = product.Where(p=> p.CategoryId==int.Parse(Categories)).ToList();
+
+        }
+        ViewBag.Categories = new SelectList(Repository.Categories,"CategoryId","Name");
         return View(product);
     }
 
