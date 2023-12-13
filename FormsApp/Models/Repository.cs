@@ -7,6 +7,7 @@ public class Repository
 
     static Repository()
     {
+         _categories.Add(new Category{CategoryId = 0 , Name = "Hepsi"});
         _categories.Add(new Category{CategoryId = 1 , Name = "Telefon"});
         _categories.Add(new Category{CategoryId = 2 , Name = "Bilgisayar"});
 
