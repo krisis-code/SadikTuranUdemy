@@ -8,6 +8,7 @@ public class Product
     public int ProductId { get; set; }
     
     [Display(Name="Ürün İsmi")]   
+    [Required]
     public string? Name { get; set; }= string.Empty;
 
     [Display(Name="Ürün Fiyatı")]
@@ -18,5 +19,6 @@ public class Product
 
     public bool IsActive { get; set; }
 
+    [Display(Name="Ürün Kategorisi")]
     public int CategoryId { get; set; }
 }
