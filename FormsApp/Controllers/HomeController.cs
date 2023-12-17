@@ -47,13 +47,30 @@ public class HomeController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Create(Product model, IFormfile imageFile)
+    public async Task <IActionResult> Create(Product model, IFormFile imageFile)
     {
+        var allowedExtension = new [] {".jpg",".jpeg",".png"};
+        var extension = Path.GetExtension(imageFile.FileName);
+        var randomFileName = string.Format($"{Guid.NewGuid().ToString()}{extension}");
+        var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/img",randomFileName);
+        if(imageFile != null)
+        {
+            if(!allowedExtension.Contains(extension))
+            {
+            ModelState.AddModelError("","Geçerli bir format seçiniz(.jpg , .jpeg , .png)");
+            }
+        }
         if(ModelState.IsValid)
         {
+            using(var stream = new FileStream(path,FileMode.Create))
+            {
+                await imageFile.CopyToAsync(stream);
+
+            }
+            model.Image=randomFileName;
             model.ProductId = Repository.Products.Count + 1;
-        Repository.CreateProduct(model);
-        return RedirectToAction("Index");
+            Repository.CreateProduct(model);
+            return RedirectToAction("Index");
         }
         ViewBag.Categories = new SelectList(Repository.Categories,"CategoryId","Name");
         return View(model);

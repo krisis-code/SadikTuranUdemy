@@ -17,7 +17,7 @@ public class Product
     public decimal Price { get; set; }
 
     [Display(Name="Ürün Görseli")]
-    [Required]
+  
     public String Image { get; set; } = string.Empty;
 
     public bool IsActive { get; set; }
