@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fSgTQszWkT501AbSstnaaqwMWHE2J2Js8+TYk5JlfKo=",
+  "Hash": "MYIj0jmj8i2lKtiEVjuO4SFrY72gxguV67zWqjYMX5E=",
   "Source": "FormsApp",
   "BasePath": "_content/FormsApp",
   "Mode": "Default",
@@ -236,6 +236,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\FormsApp\\wwwroot\\img\\c6d39e9b-836f-46c9-b70b-f1588b1ed74b.jpg",
+      "SourceId": "FormsApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\FormsApp\\wwwroot\\",
+      "BasePath": "_content/FormsApp",
+      "RelativePath": "img/c6d39e9b-836f-46c9-b70b-f1588b1ed74b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\c6d39e9b-836f-46c9-b70b-f1588b1ed74b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\FormsApp\\wwwroot\\img\\efd6e273-8421-46dc-8051-db14c6a19e8a.png",
+      "SourceId": "FormsApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\FormsApp\\wwwroot\\",
+      "BasePath": "_content/FormsApp",
+      "RelativePath": "img/efd6e273-8421-46dc-8051-db14c6a19e8a.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\efd6e273-8421-46dc-8051-db14c6a19e8a.png"
     },
     {
       "Identity": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\FormsApp\\wwwroot\\js\\site.js",
