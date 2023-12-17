@@ -47,11 +47,11 @@ public class HomeController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Create(Product model)
+    public IActionResult Create(Product model, IFormfile imageFile)
     {
         if(ModelState.IsValid)
         {
-            model.ProductId = Repository.Products.Count;
+            model.ProductId = Repository.Products.Count + 1;
         Repository.CreateProduct(model);
         return RedirectToAction("Index");
         }
