@@ -12,13 +12,17 @@ public class Product
     public string? Name { get; set; }= string.Empty;
 
     [Display(Name="Ürün Fiyatı")]
+    [Required]
+    [Range(0,100000)]
     public decimal Price { get; set; }
 
     [Display(Name="Ürün Görseli")]
+    [Required]
     public String Image { get; set; } = string.Empty;
 
     public bool IsActive { get; set; }
 
     [Display(Name="Ürün Kategorisi")]
-    public int CategoryId { get; set; }
+    [Required]
+    public int? CategoryId { get; set; }
 }
