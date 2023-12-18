@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\Basics\\basics\\basics.csproj": {}
+    "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\efcoreApp\\efcoreApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\Basics\\basics\\basics.csproj": {
+    "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\efcoreApp\\efcoreApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\Basics\\basics\\basics.csproj",
-        "projectName": "basics",
-        "projectPath": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\Basics\\basics\\basics.csproj",
+        "projectUniqueName": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\efcoreApp\\efcoreApp.csproj",
+        "projectName": "efcoreApp",
+        "projectPath": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\efcoreApp\\efcoreApp.csproj",
         "packagesPath": "C:\\Users\\Kris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\Basics\\basics\\obj\\",
+        "outputPath": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\efcoreApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -44,6 +44,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
