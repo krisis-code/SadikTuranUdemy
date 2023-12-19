@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v7.0": {
       "efcoreApp/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "7.0.8",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.8"
         },
         "runtime": {
           "efcoreApp.dll": {}
+        }
+      },
+      "Humanizer.Core/2.14.1": {
+        "runtime": {
+          "lib/net6.0/Humanizer.dll": {
+            "assemblyVersion": "2.14.0.0",
+            "fileVersion": "2.14.1.48190"
+          }
         }
       },
       "Microsoft.Data.Sqlite.Core/7.0.8": {
@@ -49,6 +58,20 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/7.0.8": {},
+      "Microsoft.EntityFrameworkCore.Design/7.0.8": {
+        "dependencies": {
+          "Humanizer.Core": "2.14.1",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.8",
+          "Microsoft.Extensions.DependencyModel": "7.0.0",
+          "Mono.TextTemplating": "2.2.1"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "assemblyVersion": "7.0.8.0",
+            "fileVersion": "7.0.823.31802"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/7.0.8": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.8",
@@ -133,6 +156,17 @@
         }
       },
       "Microsoft.Extensions.Primitives/7.0.0": {},
+      "Mono.TextTemplating/2.2.1": {
+        "dependencies": {
+          "System.CodeDom": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mono.TextTemplating.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.1.1"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.4": {
         "dependencies": {
           "SQLitePCLRaw.lib.e_sqlite3": "2.1.4",
@@ -286,6 +320,14 @@
           }
         }
       },
+      "System.CodeDom/4.4.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.25519.3"
+          }
+        }
+      },
       "System.Memory/4.5.3": {},
       "System.Text.Encodings.Web/7.0.0": {},
       "System.Text.Json/7.0.0": {
@@ -300,6 +342,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Humanizer.Core/2.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
+      "path": "humanizer.core/2.14.1",
+      "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite.Core/7.0.8": {
       "type": "package",
@@ -328,6 +377,13 @@
       "sha512": "sha512-FSEFD1j4HerUaPyOZ0/NQjZZBkxqDSx2ZKEZXOz1aOQz7PY2f1D6ZuIBTLF8zAq11f058O2cl72GXVRMfwQ5iw==",
       "path": "microsoft.entityframeworkcore.analyzers/7.0.8",
       "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.8.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Design/7.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dG+QxTeRZhtEbsN+VXF2D5z6kT1/pOFRkSTXnggugqTz3p7qSceyLqJoyGZXI8l3YsmDywgD7yfxvcy0X8uZMA==",
+      "path": "microsoft.entityframeworkcore.design/7.0.8",
+      "hashPath": "microsoft.entityframeworkcore.design.7.0.8.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/7.0.8": {
       "type": "package",
@@ -420,6 +476,13 @@
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
     },
+    "Mono.TextTemplating/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
+      "path": "mono.texttemplating/2.2.1",
+      "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.4": {
       "type": "package",
       "serviceable": true,
@@ -447,6 +510,13 @@
       "sha512": "sha512-CSlb5dUp1FMIkez9Iv5EXzpeq7rHryVNqwJMWnpq87j9zWZexaEMdisDktMsnnrzKM6ahNrsTkjqNodTBPBxtQ==",
       "path": "sqlitepclraw.provider.e_sqlite3/2.1.4",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512"
+    },
+    "System.CodeDom/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
+      "path": "system.codedom/4.4.0",
+      "hashPath": "system.codedom.4.4.0.nupkg.sha512"
     },
     "System.Memory/4.5.3": {
       "type": "package",

@@ -62,3 +62,7 @@ C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\refin
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\efcoreApp.pdb
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\efcoreApp.genruntimeconfig.cache
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\ref\efcoreApp.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\System.CodeDom.dll
