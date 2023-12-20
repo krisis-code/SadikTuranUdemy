@@ -2,8 +2,8 @@
 <h2>Öðrenci Güncelleme</h2>
 <hr />
 
-<form asp-controller="Ogrenci" asp-action="Create" method="post">
-    <input  type="hidden" asp-for="OgrenciId"/>
+<form asp-controller="Ogrenci" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="OgrenciId">
     <div class="mb-3">
         <label asp-for="OgranciAd" class="form-label">Öðrenci Adý</label>
         <input asp-for="OgranciAd" class="form-control" />
