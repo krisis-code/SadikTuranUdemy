@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using efcoreApp.Models;
 using efcoreApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace efcoreApp.Controllers;
 
@@ -13,6 +14,11 @@ public class OgrenciController : Controller
         _context = context;
     }
 
+    public async Task<IActionResult> Index()
+    {
+      
+        return View(await _context.Ogrenciler.ToListAsync());
+    }
     public IActionResult Create()
     {
         return View();
@@ -23,6 +29,6 @@ public class OgrenciController : Controller
     {
         _context.Ogrenciler.Add(model);
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index","Home");
+        return RedirectToAction("Index");
     }
 }
