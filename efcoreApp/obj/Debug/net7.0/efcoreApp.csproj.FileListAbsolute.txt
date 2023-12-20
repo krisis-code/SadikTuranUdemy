@@ -14,15 +14,19 @@ C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\efcor
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\efcoreApp.runtimeconfig.json
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\efcoreApp.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\efcoreApp.pdb
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Humanizer.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.Data.Sqlite.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\SQLitePCLRaw.core.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\runtimes\alpine-arm\native\libe_sqlite3.so
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\runtimes\alpine-arm64\native\libe_sqlite3.so
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\runtimes\alpine-x64\native\libe_sqlite3.so
@@ -62,7 +66,3 @@ C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\refin
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\efcoreApp.pdb
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\efcoreApp.genruntimeconfig.cache
 C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\obj\Debug\net7.0\ref\efcoreApp.dll
-C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Humanizer.dll
-C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\Mono.TextTemplating.dll
-C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\efcoreApp\bin\Debug\net7.0\System.CodeDom.dll
