@@ -15,6 +15,13 @@ namespace efcoreApp.Data
 
         public string? OgranciSoyad { get; set; }
 
+        public string AdSoyad
+        {
+            get
+            {
+                return this.OgranciAd + " " + this.OgranciSoyad;
+            }
+        }
         public string? Eposta { get; set; }
   
         public string? Telefon { get; set; }

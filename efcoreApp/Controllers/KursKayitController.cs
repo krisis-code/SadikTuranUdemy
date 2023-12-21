@@ -23,7 +23,7 @@ public class KursKayitController : Controller
     
     public async Task< IActionResult>  Create()
     {
-        ViewBag.Ogrenciler = new SelectList(await _context.Ogrenciler.ToListAsync(),"OgrenciId" , "OgranciAd");
+        ViewBag.Ogrenciler = new SelectList(await _context.Ogrenciler.ToListAsync(),"OgrenciId" , "AdSoyad");
         ViewBag.Kurslar = new SelectList(await _context.Kurslar.ToListAsync(), "KursId", "Baslik");
         return View();
     }
@@ -31,7 +31,7 @@ public class KursKayitController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(KursKayit model)
     {
-
+        model.KayitTarihi = DateTime.Now;
         _context.Kurskayitleri.Add(model);
         await _context.SaveChangesAsync();
         return RedirectToAction("Index");
