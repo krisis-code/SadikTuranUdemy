@@ -4,6 +4,7 @@ using efcoreApp.Models;
 using efcoreApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Immutable;
 
 namespace efcoreApp.Controllers;
 
@@ -18,7 +19,12 @@ public class KursKayitController : Controller
     public async Task<IActionResult> Index()
     {
       
-        return View(await _context.Kurskayitleri.ToListAsync());
+       var kursKayitlari = await _context
+                                .Kurskayitleri
+                                .Include(x => x.ogrenci)
+                                .Include(x=>x.kurs)
+                                .ToListAsync();
+        return View(kursKayitlari);
     }
     
     public async Task< IActionResult>  Create()
