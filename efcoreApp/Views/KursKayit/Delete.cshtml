@@ -2,10 +2,10 @@
 
 <p>
     <b>
-        @Model.ogrenci.OgranciAd @Model.ogrenci.OgranciSoyad
+        @Model.KayitId
     </b> Ýsimþi öðrenciyi silmek istediðinizden eminmisiniz.
     <form asp-action="Delete" method="post">
-        <input type="hidden" name="id" value="@Model.ogrenci.OgrenciId" />
+        <input type="hidden" name="id" value="@Model.KayitId" />
        <button type="submit" class="btn btn-danger">Evet</button>
        <a asp-action="Index" class="btn btn-primary">Hayýr</a>
     </form>

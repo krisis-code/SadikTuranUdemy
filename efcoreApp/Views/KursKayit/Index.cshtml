@@ -20,8 +20,8 @@
                 <td>@Html.DisplayFor(modelItem => item.ogrenci.AdSoyad)</td>
                 <td>@Html.DisplayFor(modelItem => item.kurs.Baslik)</td>
                 <td>
-                    <a asp-asp-controller="Ogrenci" asp-action="Edit" asp-route-id="@item.OgrenciId" class="btn btn-sm btn-primary">Edit</a>
-                    <a asp-asp-controller="Ogrenci" asp-action="Delete" asp-route-id="@item.OgrenciId" class="btn btn-sm btn-danger">Delete</a>
+                    <a asp-asp-controller="KursKayit" asp-action="Edit" asp-route-id="@item.KayitId" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-asp-controller="KursKayit" asp-action="Delete" asp-route-id="@item.KayitId" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         }
