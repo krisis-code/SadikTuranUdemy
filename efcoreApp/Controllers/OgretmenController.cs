@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace efcoreApp.Controllers;
 
-public class KursController : Controller
+public class OgretmenController : Controller
 {
     private readonly DataContext _context;
-    public KursController(DataContext context)
+    public OgretmenController(DataContext context)
     {
         _context = context;
     }
@@ -17,7 +17,7 @@ public class KursController : Controller
     public async Task<IActionResult> Index()
     {
       
-        return View(await _context.Kurslar.ToListAsync());
+        return View(await _context.Ogretmenler.ToListAsync());
     }
     
     public IActionResult Create()
@@ -26,9 +26,9 @@ public class KursController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Kurs model)
+    public async Task<IActionResult> Create(Ogretmen model)
     {
-        _context.Kurslar.Add(model);
+        _context.Ogretmenler.Add(model);
         await _context.SaveChangesAsync();
         return RedirectToAction("Index");
     }
@@ -39,23 +39,21 @@ public class KursController : Controller
             return NotFound();
         }
 
-        var krs = await _context
-                            .Kurslar
-                            .Include(k => k.KursKayitlari)
-                            .ThenInclude(k => k.ogrenci)
-                            .FirstOrDefaultAsync(k => k.KursId == id);
+        var ogr = await _context
+                             .Ogretmenler
+                             .FirstOrDefaultAsync(o => o.OgretmenId == id);
 
-        if (krs == null)
+        if (ogr == null)
         {
             return NotFound();
         }
-        return View(krs);
+        return View(ogr);
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, Kurs model)
+    public async Task<IActionResult> Edit(int id, Ogretmen model)
     {
-        if (id != model.KursId)
+        if (id != model.OgretmenId)
         {
             return NotFound();
         }
@@ -69,7 +67,7 @@ public class KursController : Controller
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Kurslar.Any(o => o.KursId == model.KursId))
+                if (!_context.Ogretmenler.Any(o => o.OgretmenId == model.OgretmenId))
                 {
                     return NotFound();
                 }
@@ -85,7 +83,7 @@ public class KursController : Controller
     }
 
 
-        [HttpGet]
+       [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if(id == null)
@@ -93,25 +91,25 @@ public class KursController : Controller
                 return NotFound();
             }
 
-            var kurs = await _context.Kurslar.FindAsync(id);
+            var ogrenci = await _context.Ogrenciler.FindAsync(id);
 
-            if(kurs == null)
+            if(ogrenci == null)
             {
                 return NotFound();
             }
 
-            return View(kurs);
+            return View(ogrenci);
         }
 
         [HttpPost]
         public async Task<IActionResult> Delete([FromForm]int id)
         {
-            var kurs = await _context.Kurslar.FindAsync(id);
-            if(kurs == null)
+            var ogrenci = await _context.Ogrenciler.FindAsync(id);
+            if(ogrenci == null)
             {
                 return NotFound();
             }
-            _context.Kurslar.Remove(kurs);
+            _context.Ogrenciler.Remove(ogrenci);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
