@@ -91,25 +91,25 @@ public class OgretmenController : Controller
                 return NotFound();
             }
 
-            var ogrenci = await _context.Ogrenciler.FindAsync(id);
+            var ogretmen = await _context.Ogretmenler.FindAsync(id);
 
-            if(ogrenci == null)
+            if(ogretmen == null)
             {
                 return NotFound();
             }
 
-            return View(ogrenci);
+            return View(ogretmen);
         }
 
         [HttpPost]
         public async Task<IActionResult> Delete([FromForm]int id)
         {
-            var ogrenci = await _context.Ogrenciler.FindAsync(id);
-            if(ogrenci == null)
+            var ogretmen = await _context.Ogretmenler.FindAsync(id);
+            if(ogretmen == null)
             {
                 return NotFound();
             }
-            _context.Ogrenciler.Remove(ogrenci);
+            _context.Ogretmenler.Remove(ogretmen);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
