@@ -6,27 +6,28 @@ using System.ComponentModel.DataAnnotations;
 
 namespace efcoreApp.Data
 {
-    public class Ogrenci
+    public class Ogretmen
     {
         [Key]
-        public int OgrenciId { get; set; }
+        public int OgretmenId { get; set; }
 
-        public string? OgrenciAd { get; set; }
+        public string? OgretmenAd { get; set; }
 
-        public string? OgrenciSoyad { get; set; }
+        public string? OgretmenSoyad { get; set; }
 
         public string AdSoyad
         {
             get
             {
-                return this.OgrenciAd + " " + this.OgrenciSoyad;
+                return this.OgretmenAd + " " + this.OgretmenSoyad;
             }
         }
         public string? Eposta { get; set; }
   
         public string? Telefon { get; set; }
+        public DateTime BaslamaTarihi { get; set; }
 
-        public ICollection<KursKayit> KursKayilari { get; set; } = new List<KursKayit>();
+        public ICollection<Kurs> Kurslar { get; set; } = new List<Kurs>();
 
 
 

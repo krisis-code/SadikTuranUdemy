@@ -15,6 +15,8 @@ namespace efcoreApp.Data
 
         public DbSet<KursKayit> Kurskayitleri => Set<KursKayit>();
 
+        public DbSet<Ogretmen> Ogretmenler => Set<Ogretmen>();
+
     }
 
 }
