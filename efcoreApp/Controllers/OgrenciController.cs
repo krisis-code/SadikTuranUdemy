@@ -85,7 +85,7 @@ public class OgrenciController : Controller
     }
 
 
-    [HttpGet]
+       [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if(id == null)
