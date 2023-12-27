@@ -8,6 +8,6 @@ namespace BlogApp.Entity
 
         public String? Text { get; set; }
 
-        public List<Post> Pots { get; set; } = new List<Post>();
+        public List<Post> Posts { get; set; } = new List<Post>();
     }
 }
