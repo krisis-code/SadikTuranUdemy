@@ -166,7 +166,7 @@ namespace BlogApp.Data.Concrete.EfCore
 
                            Tags = context.Tags.Take(3).ToList(),
 
-                           UserId = 4
+                           UserId = 3
 
                        },
                        

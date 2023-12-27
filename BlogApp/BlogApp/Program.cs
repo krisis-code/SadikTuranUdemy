@@ -11,9 +11,13 @@ builder.Services.AddDbContext<BlogContext>(options => {
 
     var config = builder.Configuration;
 
-    var connectionString = config.GetConnectionString("sql_connection");
+    //var connectionString = config.GetConnectionString("sql_connection");
+    var connectionString = config.GetConnectionString("SqlServer_Connection");
 
-    options.UseSqlite(connectionString);
+    //options.UseSqlite(connectionString);
+
+    options.UseSqlServer(connectionString);
+
 
 });
 
