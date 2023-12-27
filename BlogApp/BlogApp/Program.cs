@@ -19,6 +19,8 @@ builder.Services.AddDbContext<BlogContext>(options => {
 
 var app = builder.Build();
 
+SeedData.TestDataFill(app);
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
