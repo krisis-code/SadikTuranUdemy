@@ -76,6 +76,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            "by Cicero are also reproduced in their exact original form, accompanied by English versions from " +
                            "the 1914 translation by H. Rackham.",
 
+                           Image = "1.png",
+
                            IsActive = true,
                            
                            PublishedOn = DateTime.Now.AddDays(-10),
@@ -83,6 +85,7 @@ namespace BlogApp.Data.Concrete.EfCore
                            Tags=context.Tags.Take(3).ToList(),
                            
                            UserId = 1
+
 
                        },
 
@@ -103,6 +106,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            " below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" " +
                            "by Cicero are also reproduced in their exact original form, accompanied by English versions from " +
                            "the 1914 translation by H. Rackham.",
+
+                           Image = "2.png",
 
                            IsActive = true,
 
@@ -132,6 +137,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            "by Cicero are also reproduced in their exact original form, accompanied by English versions from " +
                            "the 1914 translation by H. Rackham.",
 
+                           Image = "3.png",
+
                            IsActive = true,
 
                            PublishedOn = DateTime.Now.AddDays(-20),
@@ -160,6 +167,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            "by Cicero are also reproduced in their exact original form, accompanied by English versions from " +
                            "the 1914 translation by H. Rackham.",
 
+                           Image = "4.png",
+
                            IsActive = true,
 
                            PublishedOn = DateTime.Now.AddDays(-10),
@@ -187,6 +196,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            " below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" " +
                            "by Cicero are also reproduced in their exact original form, accompanied by English versions from " +
                            "the 1914 translation by H. Rackham.",
+
+                           Image = "5.png",
 
                            IsActive = true,
 
