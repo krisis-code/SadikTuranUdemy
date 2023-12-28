@@ -1,4 +1,5 @@
-﻿using BlogApp.Data.Concrete.EfCore;
+﻿using BlogApp.Data.Abstract;
+using BlogApp.Data.Concrete.EfCore;
 using BlogApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,18 +8,18 @@ namespace BlogApp.Controllers
 {
     public class PostsController : Controller
     {
-        private readonly BlogContext _context;
+        private IPostRepository _repository;
 
-        public PostsController(BlogContext context)
+        public PostsController(IPostRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
 
 
         public IActionResult Index()
         {
-            return View(_context.Posts.ToList());
+            return View(_repository.Posts.ToList());
         }
 
         
