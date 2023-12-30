@@ -2,6 +2,7 @@
 using BlogApp.Data.Concrete.EfCore;
 using BlogApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BlogApp.Controllers
@@ -20,9 +21,7 @@ namespace BlogApp.Controllers
 
         }
 
-
-
-        public IActionResult Index()
+         public IActionResult Index()
         {
             return View(
                 new PostViewModel
@@ -30,6 +29,11 @@ namespace BlogApp.Controllers
                     Posts = _postrepository.Posts.ToList(),
                    
                 });
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            return View(await _postrepository.Posts.FirstOrDefaultAsync(p=>p.PostId==id));
         }
 
         

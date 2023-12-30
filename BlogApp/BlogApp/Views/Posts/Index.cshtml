@@ -12,14 +12,33 @@
                             <img src="~/img/@post.Image" class="img-fluid rounded" alt="">
                         </div>
                         <div class="col-8">
-                            <h5><a href="#" class="btn-link fw-bold">@post.Title</a></h5>
-                            <p>@post.Content</p>
+                            <h5><a asp-action="Details" asp-route-id="@post.PostId" class="btn-link fw-bold">@post.Title</a></h5>
+                            @{
+                                string[] sentences = post.Content.Split('.', StringSplitOptions.RemoveEmptyEntries);
+
+                                foreach (var sentence in sentences)
+                                {
+                                    string[] words = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                                    if (words.Length > 15)
+                                    {
+                                        string firstTenWords = string.Join(" ", words.Take(7));
+                                        <p>@firstTenWords... <a asp-action="Details" asp-route-id="@post.PostId">(Devamını Oku)</a></p>
+                                        break; // Sadece ilk cümleyi göstermek için döngüyü kırar
+                                    }
+                                    else
+                                    {
+                                        <p>@sentence</p>
+                                    }
+                                }
+                            }
                             <a href="#" class="badge bg-danger bg-opacity-10 text-danger mb-2 fw-bold">Web Development</a>
                         </div>
                     </div>
                 </div>
                 <hr class="my-3">
             }
+
             <nav>
                 <ul class="pagination">
                     <li class="page-item"><a href="#" class="page-link">1</a></li>
@@ -36,3 +55,6 @@
     </div>
 
 </div>
+
+
+                
