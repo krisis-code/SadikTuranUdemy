@@ -33,6 +33,26 @@
       "PackagePath": "staticwebassets\\img\\5.png"
     },
     {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\img\\p1.jpg",
+      "PackagePath": "staticwebassets\\img\\p1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\img\\p2.jpg",
+      "PackagePath": "staticwebassets\\img\\p2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\img\\p3.jpg",
+      "PackagePath": "staticwebassets\\img\\p3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\img\\p4.jpg",
+      "PackagePath": "staticwebassets\\img\\p4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\img\\p5.jpg",
+      "PackagePath": "staticwebassets\\img\\p5.jpg"
+    },
+    {
       "Id": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\lib\\.DS_Store",
       "PackagePath": "staticwebassets\\lib\\.DS_Store"
     },
