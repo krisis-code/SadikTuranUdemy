@@ -10,6 +10,8 @@
 
         public string? Content { get; set; }
 
+        public string? Url { get; set; }
+
         public DateTime PublishedOn { get; set; }
 
         public bool IsActive { get; set; }

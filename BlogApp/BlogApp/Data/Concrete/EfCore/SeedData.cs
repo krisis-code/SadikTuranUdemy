@@ -19,15 +19,15 @@ namespace BlogApp.Data.Concrete.EfCore
             {
                 context.Tags.AddRange(
 
-                    new Entity.Tag { Text = "web programlama"},
+                    new Entity.Tag { Text = "web programlama" , Url = "web-programlama"},
                     
-                    new Entity.Tag { Text = "backend" },
+                    new Entity.Tag { Text = "backend", Url = "backend" },
                     
-                    new Entity.Tag { Text = "frontend" },
+                    new Entity.Tag { Text = "frontend", Url = "frontend" },
                     
-                    new Entity.Tag { Text = "fullstack" },
+                    new Entity.Tag { Text = "fullstack", Url = "fullstack" },
                     
-                    new Entity.Tag { Text = "c#" }
+                    new Entity.Tag { Text = "c#" , Url = "c#" }
 
                     );
 
@@ -62,7 +62,7 @@ namespace BlogApp.Data.Concrete.EfCore
                        new Entity.Post { 
                            Title = "Asp.net core",
 
-                           Content = "ontrary to popular belief, Lorem Ipsum is not simply random text." +
+                           Content = "Contrary to popular belief, Lorem Ipsum is not simply random text." +
                            " It has roots in a piece of classical Latin literature from 45 BC, making it " +
                            "over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney " +
                            "College in Virginia, looked up one of the more obscure Latin words, consectetur," +
@@ -75,6 +75,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            " below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" " +
                            "by Cicero are also reproduced in their exact original form, accompanied by English versions from " +
                            "the 1914 translation by H. Rackham.",
+
+                           Url = "aspnet-core",
 
                            Image = "1.png",
 
@@ -93,7 +95,7 @@ namespace BlogApp.Data.Concrete.EfCore
                        {
                            Title = "Derinlemesine C#",
 
-                           Content = "ontrary to popular belief, Lorem Ipsum is not simply random text." +
+                           Content = "Contrary to popular belief, Lorem Ipsum is not simply random text." +
                            " It has roots in a piece of classical Latin literature from 45 BC, making it " +
                            "over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney " +
                            "College in Virginia, looked up one of the more obscure Latin words, consectetur," +
@@ -107,6 +109,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            "by Cicero are also reproduced in their exact original form, accompanied by English versions from " +
                            "the 1914 translation by H. Rackham.",
 
+                           Url = "c#",
+                           
                            Image = "2.png",
 
                            IsActive = true,
@@ -123,7 +127,7 @@ namespace BlogApp.Data.Concrete.EfCore
                        {
                            Title = "Javascript Öğren",
 
-                           Content = "ontrary to popular belief, Lorem Ipsum is not simply random text." +
+                           Content = "Contrary to popular belief, Lorem Ipsum is not simply random text." +
                            " It has roots in a piece of classical Latin literature from 45 BC, making it " +
                            "over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney " +
                            "College in Virginia, looked up one of the more obscure Latin words, consectetur," +
@@ -139,6 +143,8 @@ namespace BlogApp.Data.Concrete.EfCore
 
                            Image = "3.png",
 
+                           Url = "javascript",
+
                            IsActive = true,
 
                            PublishedOn = DateTime.Now.AddDays(-20),
@@ -153,7 +159,7 @@ namespace BlogApp.Data.Concrete.EfCore
                        {
                            Title = "C++ Data struct",
 
-                           Content = "ontrary to popular belief, Lorem Ipsum is not simply random text." +
+                           Content = "Contrary to popular belief, Lorem Ipsum is not simply random text." +
                            " It has roots in a piece of classical Latin literature from 45 BC, making it " +
                            "over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney " +
                            "College in Virginia, looked up one of the more obscure Latin words, consectetur," +
@@ -169,6 +175,8 @@ namespace BlogApp.Data.Concrete.EfCore
 
                            Image = "4.png",
 
+                           Url = "c++",
+
                            IsActive = true,
 
                            PublishedOn = DateTime.Now.AddDays(-10),
@@ -183,7 +191,7 @@ namespace BlogApp.Data.Concrete.EfCore
                        {
                            Title = "FullStack Development",
 
-                           Content = "ontrary to popular belief, Lorem Ipsum is not simply random text." +
+                           Content = "Contrary to popular belief, Lorem Ipsum is not simply random text." +
                            " It has roots in a piece of classical Latin literature from 45 BC, making it " +
                            "over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney " +
                            "College in Virginia, looked up one of the more obscure Latin words, consectetur," +
@@ -198,6 +206,8 @@ namespace BlogApp.Data.Concrete.EfCore
                            "the 1914 translation by H. Rackham.",
 
                            Image = "5.png",
+
+                           Url = "fullstack",
 
                            IsActive = true,
 
