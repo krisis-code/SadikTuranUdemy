@@ -3,46 +3,34 @@ using BlogApp.Data.Concrete.EfCore;
 using BlogApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
 namespace BlogApp.Controllers
 {
     public class PostsController : Controller
     {
-        private IPostRepository _postrepository;
-
-        private ITagRepository _tagRepository;
-
-        public PostsController(IPostRepository postrepository)
+        private IPostRepository _postRepository;
+        public PostsController(IPostRepository postRepository)
         {
-            _postrepository = postrepository;
-        
-            
-
+            _postRepository = postRepository;
         }
-
-         public async Task<IActionResult> Index(string tag)
+        public async Task<IActionResult> Index(string tag)
         {
-            var posts = _postrepository.Posts;
+            var posts = _postRepository.Posts;
 
             if (!string.IsNullOrEmpty(tag))
             {
                 posts = posts.Where(x => x.Tags.Any(t => t.Url == tag));
             }
-            
-            return View(
-                new PostViewModel
-                {
-                    Posts = await posts.ToListAsync()
-                   
-                });
+
+            return View(new PostViewModel { Posts = await posts.ToListAsync() });
         }
 
         public async Task<IActionResult> Details(string url)
         {
-            return View(await _postrepository.Posts.FirstOrDefaultAsync(p=>p.Url==url));
+            return View(await _postRepository
+                        .Posts
+                        .Include(x => x.Tags)
+                        .FirstOrDefaultAsync(p => p.Url == url));
         }
-
-        
     }
 }
