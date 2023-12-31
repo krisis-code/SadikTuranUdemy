@@ -12,7 +12,7 @@
                             <img src="~/img/@post.Image" class="img-fluid rounded" alt="">
                         </div>
                         <div class="col-8">
-                            <h5><a href="/posts/@post.Url" class="btn-link fw-bold">@post.Title</a></h5>
+                            <h5><a href="/posts/details/@post.Url" class="btn-link fw-bold">@post.Title</a></h5>
                             @{
                                 string[] sentences = post.Content.Split('.', StringSplitOptions.RemoveEmptyEntries);
 
@@ -23,7 +23,7 @@
                                     if (words.Length > 15)
                                     {
                                         string firstTenWords = string.Join(" ", words.Take(7));
-                                        <p>@firstTenWords... <a href="/posts/@post.Url">(Devamını Oku)</a></p>
+                                        <p>@firstTenWords... <a href="/posts/details/@post.Url">(Devamını Oku)</a></p>
                                         break; // Sadece ilk cümleyi göstermek için döngüyü kırar
                                     }
                                     else
