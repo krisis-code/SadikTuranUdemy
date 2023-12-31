@@ -1,4 +1,5 @@
 using BlogApp.Data.Abstract;
+using BlogApp.Data.Concrete;
 using BlogApp.Data.Concrete.EfCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPostRepository,EfPostRepository>();
 builder.Services.AddScoped<ITagRepository, EfTagRepository>();
+builder.Services.AddScoped<ICommentRepository, EfCommentRepository>();
+
 
 builder.Services.AddDbContext<BlogContext>(options => {
 
@@ -51,7 +54,7 @@ app.MapControllerRoute(
     defaults: new {controller = "Posts" , action = "Details"  });
 
 app.MapControllerRoute(
-    name: "posts_bu_tag",
+    name: "posts_by_tag",
     pattern: "posts/tag/{tag}",
     defaults: new { controller = "Posts", action = "Index" });
 
