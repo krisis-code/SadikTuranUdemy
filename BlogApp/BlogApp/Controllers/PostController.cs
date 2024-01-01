@@ -38,8 +38,8 @@ namespace BlogApp.Controllers
                         .ThenInclude(x => x.User)
                         .FirstOrDefaultAsync(p => p.Url == url));
         }
-
-        public IActionResult AddComment(int PostId, string UserName, string Text, string Url)
+        [HttpPost]
+        public JsonResult AddComment(int PostId, string UserName, string Text, string Url)
         {
             var entity = new Comment
             {
@@ -51,7 +51,11 @@ namespace BlogApp.Controllers
             _commentRepository.CreateComment(entity);
 
             //return Redirect("/posts/details/" + Url);
-           return RedirectToRoute("posts_details", new { url = Url });
+            return Json(new { 
+                UserName,
+                Text,
+                entity.PublishedOn,
+                entity.User.Image});
 
         }
     }

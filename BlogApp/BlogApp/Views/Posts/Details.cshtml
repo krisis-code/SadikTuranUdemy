@@ -37,7 +37,7 @@
                         <h4 class="mb-3" >Yorum Ekle</h4>
                         <form action="/posts/AddComment" method="post">
                             <input type="hidden" name="Url" value="@Model.Url" />
-                            <input type="hidden" name="PostId" value="@Model.PostId" />
+                            <input type="hidden" id="PostId" name="PostId" value="@Model.PostId" />
 
 
                             <div class="mb-3">
@@ -49,7 +49,7 @@
                                 <textarea type="text" name="text" id="text" rows="3" class="form-control"></textarea>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary" >Kaydet</button>
+                                <button id="btnCommentSave" type="submit" class="btn btn-primary" >Kaydet</button>
                             </div>
                         </form>
                     </div>
@@ -63,4 +63,29 @@
     </div>
 
 </div>
+
+@section Scripts
+{
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnCommentSave").click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("AddComment")',
+                    dataType: 'json',
+                    data: {
+                        PostId: $('#PostId').val(),
+                        UserName: $('#UserName').val(),
+                        Text: $('#text').val(),
+                    },
+                    success: function (yorum) {
+                        console.log(yorum);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+} 
 
