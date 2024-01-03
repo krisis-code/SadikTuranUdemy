@@ -23,7 +23,17 @@ namespace BlogApp.Controllers
 
         public IActionResult Login()
         {
+            if (User.Identity!.IsAuthenticated)
+            {
+                return RedirectToAction("Index","Posts");
+            }
             return View();
+        }
+
+        public async Task<IActionResult> logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
         }
 
         [HttpPost]
@@ -52,7 +62,7 @@ namespace BlogApp.Controllers
                         IsPersistent = true
                     };
 
-                    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                    
                     await HttpContext.SignInAsync(
                         CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(claimsIdentity),

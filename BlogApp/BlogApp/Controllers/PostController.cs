@@ -22,6 +22,8 @@ namespace BlogApp.Controllers
             var claims = User.Claims;
             var posts = _postRepository.Posts;
 
+
+
             if (!string.IsNullOrEmpty(tag))
             {
                 posts = posts.Where(x => x.Tags.Any(t => t.Url == tag));
