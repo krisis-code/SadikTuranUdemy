@@ -23,7 +23,7 @@
                                     if (words.Length > 15)
                                     {
                                         string firstTenWords = string.Join(" ", words.Take(7));
-                                        <p>@firstTenWords... <a href="/posts/details/@post.Url">(Devamını Oku)</a></p>
+                                        <p>@Html.Raw(@firstTenWords)... <a href="/posts/details/@post.Url">(Devamını Oku)</a></p>
                                         break; // Sadece ilk cümleyi göstermek için döngüyü kırar
                                     }
                                     else
