@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj": {}
+    "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj": {}
   },
   "projects": {
-    "C:\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj": {
+    "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj",
+        "projectUniqueName": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj",
         "projectName": "BlogApp",
-        "projectPath": "C:\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj",
-        "packagesPath": "C:\\Users\\muhammed.baspınar\\.nuget\\packages\\",
-        "outputPath": "C:\\SadikTuranUdemy\\BlogApp\\BlogApp\\obj\\",
+        "projectPath": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\BlogApp.csproj",
+        "packagesPath": "C:\\Users\\Kris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\muhammed.baspınar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +27,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

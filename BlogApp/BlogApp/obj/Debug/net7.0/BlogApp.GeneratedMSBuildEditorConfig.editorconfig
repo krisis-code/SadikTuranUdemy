@@ -9,45 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlogApp
 build_property.RootNamespace = BlogApp
-build_property.ProjectDir = C:\SadikTuranUdemy\BlogApp\BlogApp\
+build_property.ProjectDir = C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\BlogApp\BlogApp\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\SadikTuranUdemy\BlogApp\BlogApp
+build_property.MSBuildProjectDirectory = C:\Users\Kris\Desktop\Yazılım\SadikTuranUdemy\BlogApp\BlogApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/Posts/Details.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/Posts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/Posts/Index.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/Components/NewPosts/Default.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/Components/NewPosts/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmV3UG9zdHNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/Components/TagsMenu/Default.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/Components/TagsMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGFnc01lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/Users/Login.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/Users/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/_ViewImports.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/_ViewStart.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/_Layout.cshtml]
+[C:/Users/Kris/Desktop/Yazılım/SadikTuranUdemy/BlogApp/BlogApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gr6vkwv4lw
