@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BlogApp.Controllers
 {
@@ -21,8 +22,9 @@ namespace BlogApp.Controllers
         }
         public async Task<IActionResult> Index(string tag)
         {
+
             var claims = User.Claims;
-            var posts = _postRepository.Posts;
+            var posts = _postRepository.Posts.Where(i=>i.IsActive);
 
 
 
@@ -112,7 +114,52 @@ namespace BlogApp.Controllers
 
             return View(await posts.ToListAsync());
         }
+        [Authorize]
+        public IActionResult Edit(int? id)
+        {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var post = _postRepository.Posts.FirstOrDefault(i => i.PostId == id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            return View(new PostCreateViewModel
+            {
+                PostId = post.PostId,
+                Title = post.Title,
+                Content = post.Content,
+                Url = post.Url,
+                IsActive = post.IsActive
+            });
+        }
+        [Authorize]
+        [HttpPost]
+        public IActionResult Edit(PostCreateViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var entity = new Post
+                {
+                    PostId = model.PostId,
+                    Title = model.Title,
+                    Content = model.Content,
+                    Url = model.Url
+                };
+                if(User.FindFirstValue(ClaimTypes.Role) == "admin")
+                {
+                    entity.IsActive = model.IsActive;
+                }
+                _postRepository.EditPost(entity);
+
+                return RedirectToAction("List");
+            }
+            return View(model);
+        }
 
 
-    }
+        }
 }
