@@ -145,7 +145,7 @@ namespace BlogApp.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Edit(PostCreateViewModel model)
+        public IActionResult Edit(PostCreateViewModel model , int[] tagIds)
         {
             if (ModelState.IsValid)
             {
@@ -163,9 +163,10 @@ namespace BlogApp.Controllers
                     entityToUpdate.IsActive = model.IsActive;
                 }
 
-                _postRepository.EditPost(entityToUpdate);
+                _postRepository.EditPost(entityToUpdate,tagIds);
                 return RedirectToAction("List");
             }
+            ViewBag.Tags = _tagRepository.Tags.ToList() ;
             return View(model);
         }
     }
