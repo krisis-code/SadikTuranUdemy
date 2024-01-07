@@ -11,6 +11,11 @@
                 }
             </div>
             <img src="~/img/@Model.Image" class="img-fluid rounded" alt="">
+            <ul class="list-inline my-3 ">
+                <li class="list-inline-item"><i class="bi bi-calendar"></i> @Model.PublishedOn.ToString("d")</li>
+                <li class="list-inline-item"><i class="bi bi-person-circle"></i> <a href="/Profile/@Model.User.UserName">@Model.User.Name</a> </li>
+            </ul>
+            <hr class="py-3">
             <div>@Html.Raw(@Model.Content)</div>
         </div>
         <div class="bg-white mt-3">
@@ -26,7 +31,9 @@
                                 <img src="/img/@comment.User.Image" alt="" class="avatar rounded-circle float-start me-3">
                                 <div>
                                     <div class="mb-2 d-flex">
-                                        <h6 class="me-2">@comment.User.UserName</h6>
+                                        <h6 class="me-2">
+                                            <a href="/profile/@comment.User.UserName">@comment.User.Name</a>
+                                        </h6>
                                         <small>@comment.PublishedOn.ToString("G")</small>
                                     </div>
                                     <p>@comment.Text</p>
@@ -34,14 +41,14 @@
                             </div>
                         }
                     </div>
-                    @if (User.Identity.IsAuthenticated)
+
+                    @if (User.Identity!.IsAuthenticated)
                     {
                         <hr class="my-4">
                         <div>
                             <h4 class="mb-3">Yorum Ekle</h4>
                             <form action="/posts/AddComment" method="post">
                                 <input type="hidden" id="PostId" name="PostId" value="@Model.PostId">
-
                                 <div class="mb-3">
                                     <label for="Text" class="form-label">Yorum</label>
                                     <textarea type="text" name="Text" id="Text" rows="3" class="form-control"></textarea>
@@ -54,9 +61,9 @@
                     }
                     else
                     {
-                      <p>Yorum için uygulamaya giriş yapmalısınız. <a href="/users/login">Giriş Yap</a></p>      
+                        <p>Yorum için uygulamaya giriş yapmalısınız. <a href="/users/login">Login</a></p>
                     }
-                   
+
                 </div>
             </div>
         </div>
@@ -84,7 +91,7 @@
                         Text: $('#Text').val(),
                     },
                     success: function (yorum) {
-                        console.log(yorum)
+                        console.log(yorum);
                         var date = new Date(yorum.publishedOn);
 
                         $("#comments").append(`
@@ -92,7 +99,7 @@
                                         <img src="/img/${yorum.avatar}" alt="" class="avatar rounded-circle float-start me-3">
                                         <div>
                                             <div class="mb-2 d-flex">
-                                                        <h6 class="me-2">${yorum.userName}</h6>
+                                                <h6 class="me-2">${yorum.username}</h6>
                                                 <small>${date.toLocaleDateString()}</small>
                                             </div>
                                             <p>${yorum.text}</p>

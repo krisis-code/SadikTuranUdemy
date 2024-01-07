@@ -59,6 +59,10 @@ app.MapControllerRoute(
     name: "posts_details",
     pattern: "posts/details/{url}",
     defaults: new {controller = "Posts" , action = "Details"  });
+app.MapControllerRoute(
+    name: "user_profile",
+    pattern: "profile/{username}",
+    defaults: new { controller = "Users", action = "Profile" });
 
 app.MapControllerRoute(
     name: "posts_by_tag",
