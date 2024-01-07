@@ -1,0 +1,42 @@
+﻿@model PostCreateViewModel
+
+<div class="row" >
+    <div class="col-12">
+   <div class="bg-white p-4" >
+        <h1>Post Ekle</h1>
+        <form action="Create" method="post" >
+            <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input type="text" name="Title" id="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Content" class="form-label"></label>
+                    <textarea type="text" name="Content" id="Content" class="form-control"></textarea>
+                  
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+            <div class="mb-3">
+                    <label asp-for="Url" class="form-label"></label>
+                    <input type="text" name="Url" id="Url" class="form-control" />
+                    <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            
+
+            <button type="submit"  class="btn btn-primary">Post Ekle</button>
+
+        </form>
+    </div>
+    </div>
+
+</div>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.7.0/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#Content'
+        });
+    </script>
+
+}

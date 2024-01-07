@@ -67,5 +67,32 @@ namespace BlogApp.Controllers
             });
 
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(PostCreateViewModel model)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (ModelState.IsValid)
+            {
+                _postRepository.CreatePost(
+                    new Post
+                    {
+                        Title = model.Title,
+                        Content = model.Content,
+                        Url = model.Url,
+                        UserId = int.Parse(userId ?? ""),
+                        PublishedOn = DateTime.Now,
+                        Image = "default.jpg",
+                        IsActive = false
+                    }) ;
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
     }
 }

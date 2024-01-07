@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zBcPCpTSL1B/RjbvKBruM2xiXqSITy0Wp/xNcw2IdOc=",
+  "Hash": "BfS8fuCeJg4YFWaRJXGtd60Loa+t8L33GCBEEDpnjHU=",
   "Source": "BlogApp",
   "BasePath": "_content/BlogApp",
   "Mode": "Default",
@@ -185,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\a1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\img\\default.png",
+      "SourceId": "BlogApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\",
+      "BasePath": "_content/BlogApp",
+      "RelativePath": "img/default.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\default.png"
     },
     {
       "Identity": "C:\\Users\\Kris\\Desktop\\Yazılım\\SadikTuranUdemy\\BlogApp\\BlogApp\\wwwroot\\img\\p1.jpg",
