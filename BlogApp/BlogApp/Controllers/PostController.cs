@@ -163,7 +163,7 @@ namespace BlogApp.Controllers
                     entityToUpdate.IsActive = model.IsActive;
                 }
 
-                _postRepository.EditPost(entityToUpdate,tagIds);
+                _postRepository.EditPost(entityToUpdate,tagIds );
                 return RedirectToAction("List");
             }
             ViewBag.Tags = _tagRepository.Tags.ToList() ;
