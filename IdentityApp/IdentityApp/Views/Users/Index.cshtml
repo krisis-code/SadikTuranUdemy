@@ -1,7 +1,7 @@
-﻿@using Microsoft.AspNetCore.Identity;
-@model IEnumerable<AppUser>
+﻿@model IEnumerable<AppUser>
 
-    <a class="btn btn-primary" asp-action="Create">Kullanıcı Oluştur</a>
+<a class="btn btn-primary" asp-action="Create">Create User</a>
+<hr>
 <table class="table table-sm table-bordered">
     <thead>
         <tr>
@@ -19,7 +19,7 @@
                 <td>@user.FullName</td>
                 <td>@user.Email</td>
                 <td>
-                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="/Users/Edit/@user.Id" class="btn btn-primary btn-sm">Edit</a>
                     <a href="" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>

@@ -30,7 +30,7 @@ builder.Services.Configure<IdentityOptions>(options => {
     options.Password.RequireDigit = false;
 
     options.User.RequireUniqueEmail = true;
-    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+    //options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
 });
 
 var app = builder.Build();
