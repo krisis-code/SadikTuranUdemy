@@ -69,5 +69,49 @@ namespace IdentityApp.Controllers
 
             
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditViewModel model ,string id)
+        {
+
+
+            if (id != model.Id)
+            {
+                return RedirectToAction("Index");
+            }
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByIdAsync(id);
+
+                if (user != null)
+                {
+                    user.Email = model.Email;
+                    user.FullName = model.FullName;
+
+                    var result  = await _userManager.UpdateAsync(user);
+
+                    if (result.Succeeded && !string.IsNullOrEmpty(model.Password))
+                    {
+                        await _userManager.RemovePasswordAsync(user);
+                        await _userManager.AddPasswordAsync(user, model.Password);
+                    }
+
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+
+                    
+                }
+              
+            }
+
+            return View(model);
+
+        }
     }
 }
