@@ -31,7 +31,10 @@ namespace IdentityApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new AppUser { UserName = "user" + new Random().Next(1,999999), Email = model.Email, FullName = model.FullName };
+                var user = new AppUser { 
+                    UserName =model.UserName,
+                    Email = model.Email,
+                    FullName = model.FullName };
 
                 IdentityResult result = await _userManager.CreateAsync(user, model.Password);
 
