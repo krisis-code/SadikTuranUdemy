@@ -14,10 +14,11 @@ namespace IdentityApp.Controllers
 
         public IActionResult Index()
         {
-            return View(_roleManager.Roles);
+            var roles = _roleManager.Roles.ToList(); // Roles'ü List tipine çevirerek veritabanı bağlantısını kapatıyoruz.
+            return View(roles);
         }
 
-        public IActionResult Create()
+            public IActionResult Create()
         {
             return View();
         }

@@ -25,19 +25,24 @@ namespace IdentityApp.TagHelpers
 
             if (role != null && role.Name != null)
             {
-                foreach (var user in _userManager.Users)
+                // Kullanıcıları bir liste olarak al
+                var usersInRole = await _userManager.GetUsersInRoleAsync(role.Name);
+
+                using (var enumerator = usersInRole.GetEnumerator())
                 {
-                    if (await _userManager.IsInRoleAsync(user, role.Name))
+                    while (enumerator.MoveNext())
                     {
+                        var user = enumerator.Current;
                         userNames.Add(user.UserName ?? "");
                     }
                 }
-                output.Content.SetHtmlContent(userNames.Count == 0 ? "kullanıcı yok" : setHtml(userNames));
-            }
 
+                output.Content.SetHtmlContent(userNames.Count == 0 ? "kullanıcı yok" : SetHtml(userNames));
+            }
         }
 
-        private string setHtml(List<string> userNames)
+
+        private string SetHtml(List<string> userNames)
         {
             var html = "<ul>";
             foreach (var item in userNames)
