@@ -57,5 +57,37 @@ namespace IdentityApp.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(AppRole model)
+        {
+            if (ModelState.IsValid)
+            {
+                var role = await _roleManager.FindByIdAsync(model.Id);
+                
+                if (role != null)
+                {
+                    role.Name = model.Name;
+
+                    var result = await _roleManager.UpdateAsync(role);
+
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    foreach (var err in result.Errors)
+                    {
+                        ModelState.AddModelError("", err.Description);
+                    }
+                    if (role.Name != null)
+                    {
+                        ViewBag.Users = await _userManager.GetUsersInRoleAsync(role.Name);
+                    }
+                   
+                }
+            
+            }
+            return View(model);
+        }
     }
 }

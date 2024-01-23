@@ -9,45 +9,37 @@
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control">
     </div>
-
-
- 
     <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>
 
+<hr>
 <table class="table table-sm table-bordered">
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
-            <th style="width: 125px;"></th>
+            <th style="width: 80px;"></th>
         </tr>
     </thead>
     <tbody>
         @if (ViewBag.Users != null)
         {
-            @if (ViewBag.Users.Count() == 0)
+            @if (ViewBag.Users.Count == 0)
             {
-                <tr><td colspan="4" class="text-center"> User yok</td></tr>
+                <tr><td colspan="4" class="text-center">User Yok</td></tr>
             }
-        
-       
             @foreach (var user in ViewBag.Users)
-        {
-            <tr>
-                <td>@user.Id</td>
-                <td>@user.FullName</td>
-                <td>@user.Email</td>
-                <td>
-                    <a asp-asp-controller="Role" asp-action="Edit" asp-route-id="@user.Id" class="btn btn-primary btn-sm">Edit</a>
-                    <form asp-action="Delete" method="post" onsubmit="return confirm('emin misiniz')" style="display: inline-block;">
-                        <input type="hidden" value="@user.Id" name="id">
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        }
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        <a asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id" class="btn btn-primary btn-sm">Edit</a>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>
