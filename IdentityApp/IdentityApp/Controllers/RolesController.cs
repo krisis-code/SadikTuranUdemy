@@ -43,5 +43,10 @@ namespace IdentityApp.Controllers
             }
             return View(model);
         }
+
+        public async Task<IActionResult>Edit(string id)
+        {
+
+        }
     }
 }
