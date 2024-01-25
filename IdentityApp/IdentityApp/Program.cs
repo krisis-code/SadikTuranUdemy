@@ -33,6 +33,16 @@ builder.Services.Configure<IdentityOptions>(options => {
     //options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
 });
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.LogoutPath = "/Account/LogOut";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.SlidingExpiration = true;
+    options.ExpireTimeSpan = TimeSpan.FromDays(1);
+
+
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
