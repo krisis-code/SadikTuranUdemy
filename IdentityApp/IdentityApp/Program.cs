@@ -32,7 +32,7 @@ builder.Services.Configure<IdentityOptions>(options => {
     options.User.RequireUniqueEmail = true;
     //options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
 
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromTicks(5);
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
 });
 
 builder.Services.ConfigureApplicationCookie(options =>
