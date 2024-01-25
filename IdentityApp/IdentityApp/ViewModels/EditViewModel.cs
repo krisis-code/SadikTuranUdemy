@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace IdentityApp.ViewModel
+namespace IdentityApp.ViewModels
 {
     public class EditViewModel
     {
