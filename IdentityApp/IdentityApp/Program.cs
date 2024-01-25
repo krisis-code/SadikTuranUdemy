@@ -31,6 +31,8 @@ builder.Services.Configure<IdentityOptions>(options => {
 
     options.User.RequireUniqueEmail = true;
     //options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromTicks(5);
 });
 
 builder.Services.ConfigureApplicationCookie(options =>
@@ -57,7 +59,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
