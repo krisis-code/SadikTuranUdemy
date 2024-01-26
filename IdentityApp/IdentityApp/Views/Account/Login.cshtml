@@ -2,18 +2,26 @@
 
 <h2>Giriş yap</h2>
 <hr>
-<form asp-action="Create" method="post">
+<form asp-action="Login" method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="mb-3">
-        <label asp-for="Account"></label>
-        <input asp-for="Name" class="form-control">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control">
     </div>
 
     <div class="mb-3">
-        <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control">
     </div>
+
+    
+    <div class="form-check mb-3">
+        <input asp-for="RememberMe" class="form-check-input">
+        <label asp-for="RememberMe" class="form-check-label"></label>
+       
+    </div>
+
 
     <button type="submit" class="btn btn-primary">Create Role</button>
 </form>

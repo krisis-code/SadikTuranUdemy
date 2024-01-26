@@ -1,5 +1,5 @@
 ﻿using IdentityApp.Models;
-using IdentityApp.ViewModel;
+using IdentityApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
