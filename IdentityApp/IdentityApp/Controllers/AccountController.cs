@@ -93,7 +93,7 @@ namespace IdentityApp.Controllers
 
                 if (result.Succeeded)
                 {
-
+                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     return RedirectToAction("Index");
                 }
 
