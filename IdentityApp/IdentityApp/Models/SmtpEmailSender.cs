@@ -5,17 +5,17 @@ namespace IdentityApp.Models
 {
     public class SmtpEmailSender : IEmailSender
     {
-        private string _host;
+        private string? _host;
 
         private int _port;
 
         private bool _enableSSL;
 
-        private string _username;
+        private string? _username;
 
-        private string _password;
+        private string? _password;
 
-        public SmtpEmailSender(string host , int port, bool enablessl, string username , string password)
+        public SmtpEmailSender(string? host , int port, bool enablessl, string? username , string? password)
         {
             _host = host;
             _port = port;
@@ -32,7 +32,7 @@ namespace IdentityApp.Models
 
             };
 
-           return client.SendMailAsync(new MailMessage(_username , email, subject, message) { IsBodyHtml = true});
+           return client.SendMailAsync(new MailMessage(_username ?? "" , email, subject, message) { IsBodyHtml = true});
         }
     }
 }

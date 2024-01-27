@@ -11,11 +11,14 @@ namespace IdentityApp.Controllers
         private UserManager<AppUser> _userManager;
         private RoleManager<AppRole> _roleManager;
         private SignInManager<AppUser> _signInManager;
-        public AccountController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager,  SignInManager<AppUser> signInManager)
+
+        private IEmailSender _emailSender;
+        public AccountController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager,  SignInManager<AppUser> signInManager, IEmailSender emailSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
-            _signInManager = signInManager; 
+            _signInManager = signInManager;
+            _emailSender = emailSender;
         }
         public IActionResult Login()
         {
@@ -96,7 +99,9 @@ namespace IdentityApp.Controllers
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
                     var url = Url.Action("ConfirmEmail", "Account", new { user.Id, token });
-                    TempData["message"] = "Email hesabınızdaki onay mailinize tıklayınız";
+
+                    await _emailSender.SendEmailAsync(user.Email, "Hesap Onayı", $"Lütfen email hesabınızı onaylamak için linke <a href='http://localhost:5034{url}'>tıklayınız.</a>");
+                    TempData["message"] = "Email hesabınızdaki onay mailini tıklayınız.";
                     return RedirectToAction("Login" , "Account");
                 }
 
