@@ -94,6 +94,8 @@ namespace IdentityApp.Controllers
                 if (result.Succeeded)
                 {
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+                    var url = Url.Action("ConfirmEmail", "Account", new { user.Id, token });
                     return RedirectToAction("Index");
                 }
 
@@ -105,7 +107,28 @@ namespace IdentityApp.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> ConfirmEmail(string Id , String Token)
+        {
+            if (Id == null || Token == null )
+            {
+                TempData["message"] = "Geçersiz Token bilgisi";
+                return View();
+            }
 
+            var user = await _userManager.FindByIdAsync(Id);
+            if (user != null)
+            {
+                var result = await _userManager.ConfirmEmailAsync(user, Token);
+
+                if (result.Succeeded)
+                {
+                    TempData["message"] = "Hesabınız onaylandı";
+                    return View();
+                }
+            }
+            TempData["message"] = "Kullanıcı bulunamadı";
+            return View();
+        }
     }
 }
 
