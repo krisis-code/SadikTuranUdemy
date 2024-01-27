@@ -96,7 +96,8 @@ namespace IdentityApp.Controllers
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
                     var url = Url.Action("ConfirmEmail", "Account", new { user.Id, token });
-                    return RedirectToAction("Index");
+                    TempData["message"] = "Email hesabınızdaki onay mailinize tıklayınız";
+                    return RedirectToAction("Login" , "Account");
                 }
 
                 foreach (IdentityError err in result.Errors)
@@ -123,7 +124,7 @@ namespace IdentityApp.Controllers
                 if (result.Succeeded)
                 {
                     TempData["message"] = "Hesabınız onaylandı";
-                    return View();
+                    return RedirectToAction("Login","Account");
                 }
             }
             TempData["message"] = "Kullanıcı bulunamadı";
