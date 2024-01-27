@@ -22,6 +22,7 @@ namespace IdentityApp.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -31,6 +32,12 @@ namespace IdentityApp.Controllers
                 if (user != null)
                 {
                     await _signInManager.SignOutAsync();
+
+                    if (await _userManager.IsEmailConfirmedAsync(user))
+                    {
+                        ModelState.AddModelError("", "Hesabınızı onaylayınız");
+                        return View(model);
+                    }
 
                     var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe,true);
 
