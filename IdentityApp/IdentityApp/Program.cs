@@ -34,7 +34,7 @@ builder.Services.Configure<IdentityOptions>(options => {
 
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
 
-    //options.SignIn.RequireConfirmedEmail
+    options.SignIn.RequireConfirmedEmail = true;
 });
 
 builder.Services.ConfigureApplicationCookie(options =>
