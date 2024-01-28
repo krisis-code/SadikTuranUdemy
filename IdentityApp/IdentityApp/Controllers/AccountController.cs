@@ -3,6 +3,7 @@ using IdentityApp.Models;
 using IdentityApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityApp.Controllers
 {
@@ -155,6 +156,34 @@ namespace IdentityApp.Controllers
         public IActionResult ForgotPassword()
         {
              return View();
+        }
+
+        [HttpPost]
+        public  async Task<IActionResult> ForgotPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return View();
+            }
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null)
+            {
+                return View();
+                
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+           
+            var url = Url.Action("ResetPassword", "Account", new { user.Id, token });
+
+            // email
+            await _emailSender.SendEmailAsync(email, "Şifre sıfırlama", $"Lütfen şifrenizi sıfırlamak için linke <a href='http://localhost:5034{url}'>tıklayınız.</a>");
+
+            TempData["message"] = "Epota adresinize gönderlen maile nakınız";
+
+            return View();
         }
 
 
