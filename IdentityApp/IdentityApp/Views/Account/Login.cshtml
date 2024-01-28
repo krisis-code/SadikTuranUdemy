@@ -1,6 +1,11 @@
 ﻿@model LoginViewModel
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
 
-<h2>Giriş yap</h2>
+
+<h2>Login</h2>
 <hr>
 <form asp-action="Login" method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
@@ -15,13 +20,10 @@
         <input asp-for="Password" class="form-control">
     </div>
 
-    
     <div class="form-check mb-3">
         <input asp-for="RememberMe" class="form-check-input">
         <label asp-for="RememberMe" class="form-check-label"></label>
-       
     </div>
 
-
-    <button type="submit" class="btn btn-primary">Create Role</button>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>

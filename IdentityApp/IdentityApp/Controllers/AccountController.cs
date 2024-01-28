@@ -1,8 +1,8 @@
-﻿using IdentityApp.Models;
+﻿using System.IO.Pipelines;
+using IdentityApp.Models;
 using IdentityApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace IdentityApp.Controllers
 {
@@ -11,15 +11,19 @@ namespace IdentityApp.Controllers
         private UserManager<AppUser> _userManager;
         private RoleManager<AppRole> _roleManager;
         private SignInManager<AppUser> _signInManager;
-
         private IEmailSender _emailSender;
-        public AccountController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager,  SignInManager<AppUser> signInManager, IEmailSender emailSender)
+        public AccountController(
+            UserManager<AppUser> userManager,
+            RoleManager<AppRole> roleManager,
+            SignInManager<AppUser> signInManager,
+            IEmailSender emailSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
         }
+
         public IActionResult Login()
         {
             return View();
@@ -30,49 +34,44 @@ namespace IdentityApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                   var user = await _userManager.FindByEmailAsync(model.Email);
+                var user = await _userManager.FindByEmailAsync(model.Email);
 
                 if (user != null)
                 {
                     await _signInManager.SignOutAsync();
 
-                    if (await _userManager.IsEmailConfirmedAsync(user))
+                    if (!await _userManager.IsEmailConfirmedAsync(user))
                     {
-                        ModelState.AddModelError("", "Hesabınızı onaylayınız");
+                        ModelState.AddModelError("", "Hesabınızı onaylayınız.");
                         return View(model);
                     }
 
-                    var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe,true);
+                    var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, true);
 
                     if (result.Succeeded)
                     {
                         await _userManager.ResetAccessFailedCountAsync(user);
-
                         await _userManager.SetLockoutEndDateAsync(user, null);
 
                         return RedirectToAction("Index", "Home");
                     }
-                    else if(result.IsLockedOut)
+                    else if (result.IsLockedOut)
                     {
-                        var lockOutDate = await _userManager.GetLockoutEndDateAsync(user);
-
-                        var timeLeft = lockOutDate.Value - DateTime.UtcNow;
-
-                        ModelState.AddModelError("", $"Hesabınız kilitlendi , Lütfen {timeLeft.Minutes} dakika sonra tekrar deneyiniz");
+                        var lockoutDate = await _userManager.GetLockoutEndDateAsync(user);
+                        var timeLeft = lockoutDate.Value - DateTime.UtcNow;
+                        ModelState.AddModelError("", $"Hesabınız kitlendi, Lütfen {timeLeft.Minutes} dakika sonra deneyiniz");
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Parola hatalı ");
+                        ModelState.AddModelError("", "parolanız hatalı");
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Hatalı email ");
+                    ModelState.AddModelError("", "bu email adresiyle bir hesap bulunamadı");
                 }
-
-               
             }
-            return View (model);
+            return View(model);
         }
 
         public IActionResult Create()
@@ -97,45 +96,54 @@ namespace IdentityApp.Controllers
                 if (result.Succeeded)
                 {
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-
                     var url = Url.Action("ConfirmEmail", "Account", new { user.Id, token });
 
+                    // email
                     await _emailSender.SendEmailAsync(user.Email, "Hesap Onayı", $"Lütfen email hesabınızı onaylamak için linke <a href='http://localhost:5034{url}'>tıklayınız.</a>");
+
                     TempData["message"] = "Email hesabınızdaki onay mailini tıklayınız.";
-                    return RedirectToAction("Login" , "Account");
+
+                    return RedirectToAction("Login", "Account");
                 }
 
                 foreach (IdentityError err in result.Errors)
                 {
                     ModelState.AddModelError("", err.Description);
                 }
+
+                // Eğer TempData["message"]'yi ekrana bastırmak istiyorsanız, ViewBag veya ViewData üzerinden taşıyabilirsiniz.
+                ViewBag.Message = TempData["message"];
             }
+
             return View(model);
         }
 
-        public async Task<IActionResult> ConfirmEmail(string Id , String Token)
+
+        public async Task<IActionResult> ConfirmEmail(string Id, string token)
         {
-            if (Id == null || Token == null )
+            if (Id == null || token == null)
             {
-                TempData["message"] = "Geçersiz Token bilgisi";
+                TempData["message"] = "Geçersiz token bilgisi";
                 return View();
             }
 
             var user = await _userManager.FindByIdAsync(Id);
+
             if (user != null)
             {
-                var result = await _userManager.ConfirmEmailAsync(user, Token);
+                var result = await _userManager.ConfirmEmailAsync(user, token);
 
                 if (result.Succeeded)
                 {
                     TempData["message"] = "Hesabınız onaylandı";
-                    return RedirectToAction("Login","Account");
+                    return RedirectToAction("Login", "Account");
                 }
             }
+
             TempData["message"] = "Kullanıcı bulunamadı";
             return View();
         }
+
+
     }
 }
-
-    
