@@ -152,6 +152,11 @@ namespace IdentityApp.Controllers
 
         }
 
+        public IActionResult ForgotPassword()
+        {
+             return View();
+        }
+
 
     }
 }
