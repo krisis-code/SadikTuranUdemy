@@ -144,6 +144,14 @@ namespace IdentityApp.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Login");
+
+        }
+
 
     }
 }
