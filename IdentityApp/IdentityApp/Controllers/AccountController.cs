@@ -185,7 +185,10 @@ namespace IdentityApp.Controllers
 
             return View();
         }
+        public IActionResult ResetPassword(string Id, string token )
+        {
 
+        }
 
     }
 }
