@@ -3,6 +3,7 @@ using IdentityApp.Models;
 using IdentityApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityApp.Controllers
@@ -187,7 +188,40 @@ namespace IdentityApp.Controllers
         }
         public IActionResult ResetPassword(string Id, string token )
         {
+            if (Id == null || token == null)
+            {
+                return RedirectToAction("Login");
+            }
 
+            var model = new ResetPasswordModel { Token = token };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByIdAsync (model.Email);
+
+                if (user == null)
+                {
+                    TempData["message"] = "Bu mail adresine kayıtlı bir hesap yok";
+                    return RedirectToAction("Login");
+                }
+
+                var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+                if (result.Succeeded) {
+                    TempData["message"] = "Şifreniz değiştirildi";
+                    return RedirectToAction("Login");
+                }
+                foreach (IdentityError err in result.Errors)
+                {
+                    ModelState.AddModelError("", err.Description);
+                }
+            }
+            return View(model);
         }
 
     }
