@@ -21,15 +21,15 @@ namespace ProductsApi.Controllers
         }
            
         [HttpGet]
-        public string[] GetProducts()
+        public List<Product>? GetProducts()
         {
-            return Products;
+            return _products ?? new List<Product>();
         }
 
         [HttpGet("id")]
-        public string GetProduct(int id)
+        public Product? GetProduct(int id)
         {
-            return Products[id];
+            return _products.FirstOrDefault(i => i.ProductId == id) ?? new Product(); ;
         }
     }
 }
