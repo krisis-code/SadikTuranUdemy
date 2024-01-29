@@ -2,11 +2,25 @@
 
 namespace ProductsApi.Controllers
 {
-    public class ProductsController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ProductsController : ControllerBase
     {
-        public IActionResult Index()
+        private static readonly string[] Products =
         {
-            return View();
+            "IPhone 13", "IPhone 14","IPhone 15"
+        };
+
+        [HttpGet]
+        public string[] GetProducts()
+        {
+            return Products;
+        }
+
+        [HttpGet("id")]
+        public string GetProduct(int id)
+        {
+            return Products[id];
         }
     }
 }
