@@ -21,9 +21,13 @@ namespace ProductsApi.Controllers
         }
            
         [HttpGet]
-        public List<Product>? GetProducts()
+        public IActionResult GetProducts()
         {
-            return _products ?? new List<Product>();
+            if (_products == null)
+            {
+                return NotFound();
+            }
+            return Ok(_products );
         }
 
         [HttpGet("id")]
