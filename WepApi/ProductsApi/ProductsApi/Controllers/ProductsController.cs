@@ -27,9 +27,20 @@ namespace ProductsApi.Controllers
         }
 
         [HttpGet("id")]
-        public Product? GetProduct(int id)
+        public IActionResult GetProduct(int? id)
         {
-            return _products.FirstOrDefault(i => i.ProductId == id) ?? new Product(); ;
+            if (id == null)
+            {
+               return NotFound();
+            }
+
+            var product = _products.FirstOrDefault(i => i.ProductId == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
         }
     }
 }
