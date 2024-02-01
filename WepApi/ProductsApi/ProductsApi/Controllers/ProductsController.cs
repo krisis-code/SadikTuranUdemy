@@ -11,13 +11,13 @@ namespace ProductsApi.Controllers
         public readonly ProductsContext _context;
         public ProductsController(ProductsContext context)
         {
-           _context = context;
+            _context = context;
         }
-           
+
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            var products = await _context.Products.ToListAsync();   
+            var products = await _context.Products.ToListAsync();
 
             if (products == null)
             {
@@ -32,10 +32,10 @@ namespace ProductsApi.Controllers
 
             if (id == null)
             {
-               return NotFound();
+                return NotFound();
             }
 
-            var product = await _context.Products.FirstOrDefaultAsync( i => i.ProductId == id);
+            var product = await _context.Products.FirstOrDefaultAsync(i => i.ProductId == id);
 
             if (product == null)
             {
@@ -51,7 +51,37 @@ namespace ProductsApi.Controllers
 
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetProduct), new { id = entity.ProductId } , entity);
+            return CreatedAtAction(nameof(GetProduct), new { id = entity.ProductId }, entity);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct (int id , Product entity)
+        {
+            if (id != entity.ProductId )
+            {
+                return BadRequest();
+            }
+
+            var product = await _context.Products.FirstOrDefaultAsync(i => i.ProductId == id);
+
+            if (product == null) 
+            {
+                return NotFound();
+            }
+            product.ProductName = entity.ProductName;
+            product.Price = entity.Price;
+            product.IsActive = entity.IsActive;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+                
+            }
+            return NoContent();
         }
     }
 }
