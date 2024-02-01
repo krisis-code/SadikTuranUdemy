@@ -19,11 +19,7 @@ namespace ProductsApi.Controllers
         public async Task<IActionResult> GetProducts()
         {
             var products = await _context.Products.Select(
-                p => new ProductDTO 
-                { ProductId = p.ProductId
-                , ProductName = p.ProductName
-                , Price = p.Price  
-                }).ToListAsync();
+                p => ProductToDTO(p)).ToListAsync();
 
             if (products == null)
             {
@@ -41,14 +37,7 @@ namespace ProductsApi.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.Select(p => new ProductDTO
-            {
-                ProductId = p.ProductId
-                ,
-                ProductName = p.ProductName
-                ,
-                Price = p.Price
-            }).FirstOrDefaultAsync(i => i.ProductId == id);
+            var product = await _context.Products.Select(p =>  ProductToDTO(p)).FirstOrDefaultAsync(i => i.ProductId == id);
 
             if (product == null)
             {
