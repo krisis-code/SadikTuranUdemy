@@ -51,7 +51,7 @@ namespace ProductsApi.Controllers
 
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduct", new { id = entity.ProductId } , entity);
+            return CreatedAtAction(nameof(GetProduct), new { id = entity.ProductId } , entity);
         }
     }
 }
