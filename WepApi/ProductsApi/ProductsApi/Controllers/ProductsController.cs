@@ -41,7 +41,14 @@ namespace ProductsApi.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.FirstOrDefaultAsync(i => i.ProductId == id);
+            var product = await _context.Products.Select(p => new ProductDTO
+            {
+                ProductId = p.ProductId
+                ,
+                ProductName = p.ProductName
+                ,
+                Price = p.Price
+            }).FirstOrDefaultAsync(i => i.ProductId == id);
 
             if (product == null)
             {
@@ -116,6 +123,15 @@ namespace ProductsApi.Controllers
             }
 
             return NoContent();
+        }
+        private static ProductDTO ProductToDTO(Product p)
+        {
+            return new ProductDTO
+            {
+                ProductId = p.ProductId,
+                ProductName = p.ProductName,
+                Price = p.Price
+            };
         }
     }
 }
