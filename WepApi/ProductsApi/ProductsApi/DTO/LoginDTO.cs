@@ -2,7 +2,7 @@
 
 namespace ProductsApi.DTO
 {
-    public class lOGİNDTO
+    public class LoginDTO
     {
         
 
