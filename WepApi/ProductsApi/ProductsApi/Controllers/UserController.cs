@@ -22,7 +22,7 @@ namespace ProductsApi.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(result.Errors);
+                return BadRequest(ModelState);
             }
             var user = new AppUser
             {
@@ -39,8 +39,13 @@ namespace ProductsApi.Controllers
             {
                 return StatusCode(201);
             }
-
+            return Ok();
            
+        }
+
+        public async Task<IActionResult> Login ()
+        {
+            
         }
     }
 }
