@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using ProductsApi.DTO;
 using ProductsApi.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace ProductsApi.Controllers
 {
@@ -13,10 +17,13 @@ namespace ProductsApi.Controllers
 
         private readonly SignInManager<AppUser> _signInManager;
 
-        public UserController(UserManager<AppUser> userManager , SignInManager<AppUser> signInManager)
+        private readonly IConfiguration _configuraiton;
+
+        public UserController(UserManager<AppUser> userManager , SignInManager<AppUser> signInManager , IConfiguration configuraiton)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuraiton = configuraiton;
         }
 
         [HttpPost("register")]
@@ -57,14 +64,31 @@ namespace ProductsApi.Controllers
 
             if (result.Succeeded)
             {
-                return Ok(new { token = GenerateJTW(user) });
+                return Ok(new { token = GenerateJWT(user) });
             }
             return Unauthorized();
         }
 
-        private object GenerateJTW(AppUser user)
+        private object GenerateJWT(AppUser user)
         {
-            throw new NotImplementedException();
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_configuraiton.GetSection("AppSettings:Secret").Value ?? "");
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(
+                    new Claim[]
+                    {
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                        new Claim(ClaimTypes.Name, user.UserName ?? ""),
+
+                    }
+
+                    ),
+                Expires = DateTime.UtcNow.AddDays(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }
