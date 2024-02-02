@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProductsApi.Models
 {
-    public class ProductsContext : DbContext
+    public class ProductsContext : IdentityDbContext<AppUser,AppRole,int>
     {
         public ProductsContext()
         {
