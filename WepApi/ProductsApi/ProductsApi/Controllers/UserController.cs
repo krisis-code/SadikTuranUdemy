@@ -57,9 +57,14 @@ namespace ProductsApi.Controllers
 
             if (result.Succeeded)
             {
-                return Ok(new { token = "token" });
+                return Ok(new { token = GenerateJTW(user) });
             }
             return Unauthorized();
+        }
+
+        private object GenerateJTW(AppUser user)
+        {
+            throw new NotImplementedException();
         }
     }
 }
