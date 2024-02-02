@@ -1,12 +1,46 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using ProductsApi.DTO;
+using ProductsApi.Models;
 
 namespace ProductsApi.Controllers
 {
-    public class UserController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController : ControllerBase
     {
-        public IActionResult Index()
+        private UserManager<AppUser> _userManager;
+
+        public UserController(UserManager<AppUser> userManager)
         {
-            return View();
+            _userManager = userManager;
+        }
+
+        [HttpPost("register")]
+
+        public async Task<IActionResult> CreateUser(userDTO model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(result.Errors);
+            }
+            var user = new AppUser
+            {
+                UserName = model.UserName,
+                Email = model.Email,
+                FullName = model.FullName,
+                AddedTime = DateTime.Now, 
+
+            };
+
+            var result = await _userManager.CreateAsync(user , model.Password);
+
+            if (result.Succeeded)
+            {
+                return StatusCode(201);
+            }
+
+           
         }
     }
 }

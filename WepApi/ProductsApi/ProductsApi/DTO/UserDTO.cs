@@ -1,13 +1,16 @@
-﻿namespace ProductsApi.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ProductsApi.DTO
 {
     public class userDTO
     {
-        public string? FullName { get; set; }
+        [Required]
+        public string FullName { get; set; } = null!;
 
-        public string? UserName { get; set; }
+        public string UserName { get; set; } = null!;
 
-        public string? Email { get; set; }
+        public string Email { get; set; } = null!;
 
-        public string? Password { get; set; }
+        public string Password { get; set; } = null!;
     }
 }
