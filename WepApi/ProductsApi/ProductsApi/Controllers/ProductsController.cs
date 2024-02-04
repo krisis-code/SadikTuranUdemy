@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProductsApi.DTO;
 using ProductsApi.Models;
 
 namespace ProductsApi.Controllers
 {
+   
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
@@ -27,7 +29,7 @@ namespace ProductsApi.Controllers
             }
             return Ok(products);
         }
-
+        [Authorize]
         [HttpGet("id")]
         public async Task<IActionResult> GetProduct(int? id)
         {
