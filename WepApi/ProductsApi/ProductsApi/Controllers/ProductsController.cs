@@ -37,7 +37,7 @@ namespace ProductsApi.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.Select(p =>  ProductToDTO(p)).FirstOrDefaultAsync(i => i.ProductId == id);
+            var product = await _context.Products.Where(i => i.ProductId == id).Select(p =>  ProductToDTO(p)).FirstOrDefaultAsync();
 
             if (product == null)
             {
