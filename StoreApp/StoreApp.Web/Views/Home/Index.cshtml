@@ -1,1 +1,15 @@
-﻿<h5>İndex page</h5>
+﻿@using StoreApp.web.Models
+
+@model ProductListViewModel
+<h5>İndex page</h5>
+@foreach(var p in Model.Products)
+{
+    <div>
+
+        <h4>@p.Name</h4>
+        <p>@p.Description</p>
+        <p>@p.Price</p>
+
+    </div>
+
+}
