@@ -23,7 +23,7 @@ namespace StoreApp.web.Controllers
 				Price = p.Price
 			}).ToList(); 
 			
-			return View(products);
+			return View(new ProductListViewModel { Products = products});
 		}
 	}
 }
