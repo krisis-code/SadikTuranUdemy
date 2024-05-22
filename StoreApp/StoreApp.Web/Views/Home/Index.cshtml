@@ -2,6 +2,10 @@
 
 @model ProductListViewModel
 <h5>İndex page</h5>
+@if(Model.Products.Count()==0)
+{
+    <p>Ürün bulunamadı</p>
+}
 @foreach(var p in Model.Products)
 {
     <div>
