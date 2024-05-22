@@ -13,6 +13,8 @@ namespace StoreApp.web.Models
 	public class ProductListViewModel
 	{
 		public IEnumerable<ProductViewModel> Products { get; set; } = Enumerable.Empty<ProductViewModel>();
+	
+		public PageInfo PageInfo { get; set; }
 	}
 	public class PageInfo()
 	{
