@@ -12,4 +12,8 @@
 	{
 		public IEnumerable<ProductViewModel> Products { get; set; } = Enumerable.Empty<ProductViewModel>();
 	}
+	public class PageInfo()
+	{
+
+	}
 }
