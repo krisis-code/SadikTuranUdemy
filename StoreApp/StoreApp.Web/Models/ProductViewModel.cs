@@ -1,4 +1,6 @@
-﻿namespace StoreApp.web.Models
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace StoreApp.web.Models
 {
 	public class ProductViewModel
 	{
@@ -14,6 +16,10 @@
 	}
 	public class PageInfo()
 	{
+		public int TotalItems { get; set; }
 
-	}
+		public int ItemsPerPage { get; set; }
+
+        public int TotalPages =>(int)Math.Ceiling((decimal)TotalItems/ItemsPerPage);
+    }
 }
