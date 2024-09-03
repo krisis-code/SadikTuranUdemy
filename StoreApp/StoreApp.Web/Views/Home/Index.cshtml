@@ -1,4 +1,5 @@
 ﻿@using StoreApp.web.Models
+
 @model ProductListViewModel
 
 <h5>Index Page</h5>
@@ -16,7 +17,8 @@
         <p>@p.Price</p>
     </div>
 }
-
+@* <div page-model="@Model.PageInfo" page-action="Index"></div>
+ *@
 @for (var i = 1; i <= Model.PageInfo.TotalPages; i++)
 {
     <a href="/?page=@i">@i</a>
